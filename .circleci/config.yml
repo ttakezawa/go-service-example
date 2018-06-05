@@ -1,0 +1,17 @@
+# Golang CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-go/ for more details
+version: 2
+jobs:
+  build:
+
+    docker:
+      # CircleCI Go images available at: https://hub.docker.com/r/circleci/golang/
+      - image: circleci/golang:1.10
+
+    working_directory: /go/src/github.com/ttakezawa/go-service-example
+
+    steps:
+      - checkout
+      - run: make -j $(nproc) dep-ensure install-linter
+      - run: make -j $(nproc) release test lint
