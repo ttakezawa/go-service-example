@@ -13,6 +13,7 @@ import (
 func main() {
 	if err := run(); err != nil {
 		log.Printf(err.Error())
+		os.Exit(1)
 	}
 }
 
