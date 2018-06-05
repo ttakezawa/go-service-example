@@ -31,3 +31,8 @@ lint:
 dep-ensure:
 	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 	dep ensure -v -vendor-only
+
+.PHONY: run-local
+run-local: debug
+	@echo If you need to refresh dependencies, please invoke \`make dep-ensure\'
+	./build/debug/go-service-example
