@@ -27,6 +27,11 @@ test:
 lint:
 	gometalinter -j $$(( $$(nproc) * 2 )) --deadline=90s ./...
 
+.PHONY: install-linter
+install-linter:
+	go get -u github.com/alecthomas/gometalinter
+	gometalinter -i
+
 .PHONY: dep-ensure
 dep-ensure:
 	curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
