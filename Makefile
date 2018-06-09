@@ -1,8 +1,5 @@
 NAME=$(shell basename $(CURDIR))
 
-.PHONY: all
-all: debug release
-
 .PHONY: debug
 debug: build/debug/$(NAME)
 
