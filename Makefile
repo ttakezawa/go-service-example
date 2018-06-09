@@ -26,7 +26,7 @@ lint:
 
 .PHONY: install-linter
 install-linter:
-	go get -u github.com/alecthomas/gometalinter
+	go get -v -u github.com/alecthomas/gometalinter
 	gometalinter -i
 
 .PHONY: dep-ensure
