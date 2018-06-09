@@ -44,5 +44,5 @@ run: debug
 
 .PHONY: clean
 clean:
-	go clean
-	-rm build/debug/$(NAME) build/release/$(NAME)_linux_amd64
+	go clean -cache -testcache
+	$(RM) build/debug/$(NAME) build/release/$(NAME)_linux_amd64
